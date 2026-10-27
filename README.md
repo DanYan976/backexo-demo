@@ -12,7 +12,7 @@ AnyMotion Lab and BioDynamics Lab, New Jersey Institute of Technology.
 
 | Step | What it does |
 |---|---|
-| 1. Digital human models | Body models of many sizes, fitted to motion capture on the GPU, with 210 lower-back muscles and the load on each spinal joint |
+| 1. Digital human models | [MyoFullBody](https://github.com/amathislab/musclemimic_models) from MuscleMimic, a full-body MuJoCo model driven by 416 muscles, fitted to each person's motion capture on the GPU; it gives the load on every spinal joint |
 | 2. Train in simulation | Each model wears the exo; one controller learns by trial and error across worker, load and technique combinations |
 | 3. Deploy on hardware | The trained controller drives the FIT HV motors in real time, tested in the lab first, then in the field |
 
