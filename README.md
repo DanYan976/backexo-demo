@@ -1,6 +1,6 @@
-# Simulation-Trained Low-Back Exo Control
+# BackExo
 
-**One adaptive controller for back-support exoskeletons, trained in simulation.**
+**Simulation-trained, adaptive control for low-back exoskeletons.**
 
 Back-support exoskeletons help in the lab but struggle on the floor, mostly because their control is one-size-fits-all. We build digital human models of many body sizes, train one controller in simulation across thousands of worker, load and lifting-technique combinations, and run it on a commercial active exoskeleton (FIT HV). The controller adjusts its assist to each worker, gives smooth and stable torque, and is judged by the load it removes from the lower spine (L5/S1), the joint the NIOSH lifting limit is set at.
 
