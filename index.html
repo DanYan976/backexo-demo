@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulation-Trained Exo Control</title>
+  <meta name="description" content="One adaptive controller for low-back exoskeletons, trained in simulation across many body sizes, loads and lifts. AnyMotion Lab and BioDynamics Lab, NJIT.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top">Exo Control</a>
+      <nav>
+        <a href="#problem">Problem</a>
+        <a href="#approach">Approach</a>
+        <a href="#progress">Progress</a>
+        <a class="pill" href="#together">Work with us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero wrap">
+      <div class="hero-text">
+        <p class="eyebrow rise">AnyMotion Lab and BioDynamics Lab, NJIT</p>
+        <h1 class="rise d1">Adaptive, simulation&#8209;trained control for <span class="grad">low&#8209;back exoskeletons</span></h1>
+        <p class="lead rise d2">Back-support exoskeletons struggle in the field because their control is one-size-fits-all. We train one adaptive controller in simulation, across many body sizes, loads and lifts, so it adjusts its assist to each worker. Then we run it on a commercial active exoskeleton.</p>
+        <p class="rise d3"><a class="btn" href="#approach">See how it works</a></p>
+      </div>
+      <div class="placeholder hero-fig rise d2">[Figure to add]</div>
+    </section>
+
+    <!-- Problem -->
+    <section class="band wrap" id="problem">
+      <p class="eyebrow fade">The problem</p>
+      <h2 class="fade">Strains and sprains are the biggest injury category</h2>
+      <p class="lead fade">Musculoskeletal disorders (MSDs) come from repetitive lifting, awkward postures and heavy loads. Public safety reports from one of the largest warehouse operators show how big the problem still is.</p>
+      <div class="grid c3">
+        <div class="fade">
+          <p class="stat grad">57%</p>
+          <div class="rule"><p class="cap">of recordable injuries are MSDs.</p><p class="sub">The 2025 report still says &ldquo;more than half.&rdquo;</p></div>
+        </div>
+        <div class="fade d1">
+          <p class="stat grad">&minus;43%</p>
+          <div class="rule"><p class="cap">MSD rate over six years.</p><p class="sub">Yet MSDs &ldquo;remain our primary focus.&rdquo;</p></div>
+        </div>
+        <div class="fade d2">
+          <p class="stat grad">5%</p>
+          <div class="rule"><p class="cap">less lower-back force from power-zone picking.</p><p class="sub">Lower-back load is already tracked. An exo lowers it at every lift.</p></div>
+        </div>
+      </div>
+      <p class="cite fade">Source: Amazon workplace safety reports on
+        <a href="https://www.aboutamazon.com/news/workplace/amazon-workplace-safety-post-2023">2023 data</a>,
+        <a href="https://www.aboutamazon.com/news/workplace/amazon-workplace-safety-performance-2024">2024 data</a> and
+        <a href="https://www.aboutamazon.com/news/workplace/amazon-workplace-safety-2025-injury-reduction">2025 data</a>.</p>
+    </section>
+
+    <!-- Yardstick -->
+    <section class="band wrap">
+      <div class="split">
+        <div class="fade">
+          <p class="eyebrow">The yardstick</p>
+          <h2>The NIOSH spine limit</h2>
+          <p class="stat big"><span class="grad">3.4</span><span class="unit"> kN</span></p>
+          <p class="cap">L5/S1 disc compression that NIOSH uses to define increased low-back injury risk.</p>
+          <p class="sub">It is the biomechanical basis of the Revised NIOSH Lifting Equation.</p>
+          <p class="cite">Waters et al., <a href="https://stacks.cdc.gov/view/cdc/205542">Ergonomics 1993</a></p>
+        </div>
+        <div class="stack fade d1">
+          <div class="rule"><h3>We measure it</h3><p class="sub">Our models estimate the load at L5/S1 for every lift, with and without the exo.</p></div>
+          <div class="rule"><h3>We show the drop</h3><p class="sub">Which tasks come close to the limit, and how far the exo brings them down.</p></div>
+          <div class="rule"><h3>It fits safety programs</h3><p class="sub">Ergonomic risk assessments already use NIOSH criteria. Our output speaks the same language.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why exos struggle -->
+    <section class="band wrap">
+      <p class="eyebrow fade">Why exos struggle</p>
+      <h2 class="fade">Help in the lab, struggle on the floor</h2>
+      <div class="split">
+        <div class="fade">
+          <p class="label">In the lab</p>
+          <p class="stat grad">~20%</p>
+          <p class="cap">less back-muscle activity during lifting, on average.</p>
+          <p class="sub">25% with active exos, 18% with passive. Tested mostly on healthy young men.</p>
+          <p class="cite">Kermavnar et al., <a href="https://doi.org/10.1080/00140139.2020.1870162">Ergonomics 2021</a> (review of 33 studies)</p>
+        </div>
+        <div class="fade d1">
+          <p class="label">On the floor</p>
+          <div class="stack">
+            <div class="rule"><h3>Sudden torque spikes</h3><p class="sub">Rule-based control can jump to a large torque at once. Uncomfortable, even unsafe.</p></div>
+            <div class="rule"><h3>One size for all</h3><p class="sub">Same assist for every worker, load and lifting style.</p></div>
+            <div class="rule"><h3>Unproven at work</h3><p class="sub">Spine load is rarely measured on the job, so injury prevention is hard to show.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="fade spaced">The problem is <span class="grad">control</span>, not hardware</h2>
+      <div class="grid c3">
+        <div class="rule fade"><h3>Passive springs</h3><p class="sub">Same support for every lift. Resists walking and sitting, and cannot react to load.</p></div>
+        <div class="rule fade d1"><h3>Hand-tuned rules</h3><p class="sub">Simple rules (e.g., more help the more you bend), set on a few lab subjects. Ignore who lifts and how heavy.</p></div>
+        <div class="rule fade d2"><h3>Per-person tuning</h3><p class="sub">Fits one person, but takes hours of testing per worker and per task. Too slow for a workforce.</p></div>
+      </div>
+      <p class="statement fade"><span class="grad">What is needed:</span> one controller that adapts to each worker's size, load and technique, needs no tuning sessions, gives smooth and stable torque, and cuts spine load.</p>
+    </section>
+
+    <!-- Approach: text scrolls on the left, the figure on the right follows the active step -->
+    <section class="band wrap" id="approach">
+      <p class="eyebrow fade">Our approach</p>
+      <h2 class="fade">One adaptive controller, in three steps</h2>
+      <div class="pipeline">
+        <div class="stage">
+          <ol class="pipe-nav" aria-label="Pipeline steps">
+            <li class="on"><button type="button" data-step="0">Human models</button></li>
+            <li><button type="button" data-step="1">Simulation</button></li>
+            <li><button type="button" data-step="2">Hardware</button></li>
+          </ol>
+          <div class="frames">
+            <div class="frame on placeholder">[Figure to add]</div>
+            <div class="frame placeholder">[Figure to add]</div>
+            <div class="frame photo"><img src="assets/img/fithv.jpg" alt="FIT HV active hip exoskeleton worn while lifting a box"></div>
+          </div>
+          <p class="pipe-count"><span class="grad">01</span> / 03</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <p class="step-n grad">01</p>
+            <h3>Digital human models</h3>
+            <p class="sub">Body models of many sizes, built from motion capture, with 210 lower-back muscles and the load on each spinal joint.</p>
+          </article>
+          <article class="step">
+            <p class="step-n grad">02</p>
+            <h3>Train in simulation</h3>
+            <p class="sub">Each model wears the exo. One controller learns by trial and error, across thousands of worker, load and technique combinations, before anyone wears the device.</p>
+          </article>
+          <article class="step">
+            <p class="step-n grad">03</p>
+            <h3>Deploy on hardware</h3>
+            <p class="sub">Our controller drives the FIT HV motors live. Test in the lab first, then on the floor.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress -->
+    <section class="band wrap" id="progress">
+      <p class="eyebrow fade">Progress</p>
+      <h2 class="fade">Building blocks already in place</h2>
+      <div class="grid c4">
+        <div class="fade">
+          <p class="stat grad">90</p>
+          <div class="rule"><p class="cap">lifting trials from 10 people, on our fast GPU software.</p><p class="sub">Tracks body markers more closely than OpenSim (19.9 vs 26.2 mm).</p></div>
+        </div>
+        <div class="fade d1">
+          <p class="stat"><span class="muted small">r = </span><span class="grad">0.99</span></p>
+          <div class="rule"><p class="cap">match between our L5/S1 load and force plates.</p><p class="sub">The same joint the NIOSH limit is set at.</p></div>
+        </div>
+        <div class="fade d2">
+          <p class="stat grad">&minus;25%</p>
+          <div class="rule"><p class="cap">less lower-back effort with exo assist (20 N&middot;m per hip).</p><p class="sub">In simulation, same lift with and without assist.</p></div>
+        </div>
+        <div class="fade d3">
+          <p class="stat grad">Live</p>
+          <div class="rule"><p class="cap">control of the FIT HV motors from our own software.</p><p class="sub">So a controller trained in simulation can run on the real device.</p></div>
+        </div>
+      </div>
+      <p class="cite fade">Exo results are from simulation.</p>
+
+      <!-- TEAM SLOT: replace the placeholder with one .demo per video, e.g.
+           <figure class="demo"><video src="assets/video/rl-demo.mp4" controls muted playsinline></video><figcaption>What to watch for</figcaption></figure> -->
+      <h3 class="fade spaced-sm">Video demonstrations</h3>
+      <div class="demos">
+        <div class="placeholder demo-ph fade">[Video demonstrations to add]</div>
+      </div>
+    </section>
+
+    <!-- Working together -->
+    <section class="band wrap" id="together">
+      <p class="eyebrow fade">Working together</p>
+      <h2 class="fade">Your data <span class="grad">stays with you</span></h2>
+      <div class="grid c3">
+        <div class="rule fade"><h3>We provide</h3>
+          <ul class="plain"><li>The simulation platform and methods</li><li>Code and trained exo controllers</li><li>Lab testing on our own active exo</li></ul></div>
+        <div class="rule fade d1"><h3>You keep</h3>
+          <ul class="plain"><li>All worker and task data, in-house</li><li>Run our pipeline on your own systems</li><li>Decide what, if anything, to share</li></ul></div>
+        <div class="rule fade d2"><h3 class="grad">Together</h3>
+          <ul class="plain strong"><li>Controllers fitted to real workplace tasks</li><li>L5/S1 load checked against the NIOSH limit</li><li>A step-by-step path from lab to floor</li></ul></div>
+      </div>
+      <p class="statement fade">One possible first step: <span class="sec">we share the pipeline, you run it on a few real tasks in-house, and we test the exo on matching mock tasks in our lab before any floor trial.</span></p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <p>AnyMotion Lab and BioDynamics Lab, New Jersey Institute of Technology</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
