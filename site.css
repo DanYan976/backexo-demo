@@ -32,9 +32,12 @@ img { max-width: 100%; display: block; }
 /* Type */
 .eyebrow { font-size: 18px; font-weight: 600; color: var(--eyebrow); margin: 0 0 8px; }
 h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 700; line-height: 1.04; letter-spacing: -0.03em; margin: 0 0 28px; }
-h2 { font-size: clamp(32px, 4.4vw, 54px); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 32px; }
+h2 { font-size: clamp(40px, 5.4vw, 68px); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 28px; }
 h3 { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 8px; }
-.lead { font-size: 21px; color: var(--secondary); max-width: 720px; margin: -12px 0 48px; }
+.subhead { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 32px; }
+/* Section description: spans the full width; its first sentence (strong) is the key point */
+.lead { font-size: 22px; color: var(--secondary); margin: 0 0 56px; }
+.lead strong { color: var(--text); font-weight: 600; }
 .hero .lead { margin: 0 0 32px; }
 .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .muted { color: var(--muted); }
@@ -56,6 +59,7 @@ h3 { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 8px
 /* Layout */
 .band { padding: 120px 32px 40px; }
 .grid { display: grid; gap: 44px; }
+.grid.c2 { grid-template-columns: repeat(2, 1fr); gap: 56px; }
 .grid.c3 { grid-template-columns: repeat(3, 1fr); }
 .grid.c4 { grid-template-columns: repeat(4, 1fr); gap: 32px; }
 .grid.c4 .stat { font-size: clamp(56px, 6vw, 84px); }
@@ -102,6 +106,23 @@ ul.plain.strong li { color: var(--text); font-weight: 600; }
 .frame.photo img { height: 100%; width: auto; object-fit: contain; }
 .pipe-count { font-size: 14px; font-weight: 700; color: var(--muted); margin: 0; letter-spacing: .08em; }
 
+/* Labs */
+.pi { display: flex; align-items: center; gap: 20px; margin: 28px 0 14px; }
+.pi p { font-size: 20px; font-weight: 600; line-height: 1.3; margin: 0; }
+.avatar { width: 96px; height: 96px; flex: none; border-radius: 50%; object-fit: cover; background: var(--card); }
+.pi .role { display: block; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--eyebrow); margin-bottom: 4px; }
+.pi a, .more a, .pub h3 a { text-decoration: none; }
+.pi a:hover, .more a:hover, .pub h3 a:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.more { font-size: 16px; font-weight: 600; margin: 18px 0 0; }
+
+/* Publications: venue on the left, paper on the right */
+.pubs { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }
+.pub { display: grid; grid-template-columns: 180px 1fr; gap: 40px; padding: 28px 0 32px; border-top: 1px solid var(--line); }
+.pub-venue { font-size: 18px; font-weight: 600; margin: 2px 0 0; }
+.pub-venue span { display: block; font-size: 15px; font-weight: 400; color: var(--eyebrow); margin-top: 2px; }
+.pub h3 { font-size: 22px; line-height: 1.3; margin-bottom: 8px; }
+.pub-authors { font-size: 15px; color: var(--eyebrow); margin: 0 0 10px; }
+
 /* Footer */
 .foot { border-top: 1px solid #1d1d1f; margin-top: 120px; }
 .foot-in { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 28px; padding-bottom: 40px; font-size: 14px; color: var(--source); }
@@ -130,7 +151,9 @@ ul.plain.strong li { color: var(--text); font-weight: 600; }
   .nav nav a:not(.pill) { display: none; }
   .hero { grid-template-columns: 1fr; min-height: 0; gap: 40px; }
   .hero-fig { max-height: 60vh; aspect-ratio: 4 / 3; }
-  .grid.c3, .split { grid-template-columns: 1fr; gap: 40px; }
+  .lead { font-size: 19px; margin-bottom: 44px; }
+  .grid.c2, .grid.c3, .split { grid-template-columns: 1fr; gap: 40px; }
+  .pub { grid-template-columns: 1fr; gap: 8px; }
   .grid.c4 { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
   .pipeline { grid-template-columns: 1fr; grid-template-areas: "stage" "steps"; gap: 0; }
   .stage { top: var(--nav-h); height: 46vh; padding: 12px 0; background: var(--bg); z-index: 1; }
