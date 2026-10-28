@@ -12,7 +12,7 @@ AnyMotion Lab and BioDynamics Lab, New Jersey Institute of Technology.
 
 | Step | What it does |
 |---|---|
-| 1. Digital human model | [MyoFullBody](https://github.com/amathislab/musclemimic_models) from MuscleMimic, a full-body MuJoCo model driven by 416 muscles, fitted to each person's motion capture on the GPU; it gives the load on every spinal joint. A model of the FIT HV straps onto it |
+| 1. Digital human model | A full-body musculoskeletal model driven by 416 muscles, fitted to each person's motion capture on the GPU; it gives the load on every spinal joint. A model of the FIT HV straps onto it |
 | 2. Learn from real motion | Lab recordings, even a plain video, become reference motions; the digital human learns to reproduce them in physics with its own muscles |
 | 3. Lift boxes in simulation | The digital human lifts boxes in physics with the techniques workers use (full squat, semi squat, stoop) and carries them to a shelf |
 | 4. Train the exo controller | The digital human wears the exo; one controller learns by trial and error across worker, load and technique combinations |
