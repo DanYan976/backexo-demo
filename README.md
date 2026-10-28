@@ -75,6 +75,6 @@ Plain HTML, CSS and JS, no build step. GitHub Pages serves the `main` branch, so
 | Preview | Run `python -m http.server` in this folder and open http://localhost:8000, or double-click `index.html` |
 | Change text | Edit `index.html`; change only the text between tags and keep the `class="..."` attributes |
 | Change an Approach step's video | Each step is an `<article class="chapter">`; replace the file in `assets/video/` (same name) and its poster `.jpg`. Videos: H.264, muted, 30 fps, a few MB each |
-| Add a video demo | Put the MP4 (H.264, under about 50 MB) in `assets/video/` and add it where the `TEAM SLOT` comment in the Progress section says |
+| Add a hardware video | Put the MP4 (H.264, a few MB) in `assets/video/` and add it where the `TEAM SLOT` comment in step 05 (Deploy on hardware) says |
 
 Style: put the accent only on the one number or word that matters (`class="grad"`), and avoid em dashes.

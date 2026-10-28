@@ -147,11 +147,14 @@
           <header class="chapter-head fade">
             <p class="chapter-n grad">03</p>
             <div><h3>Lift boxes in simulation</h3>
-              <p class="sub">The digital human lifts real boxes in physics, with the techniques workers use: full squat, semi squat and stoop.</p></div>
+              <p class="sub">The digital human lifts real boxes in physics, with the techniques workers use (full squat, semi squat and stoop), and carries them to a shelf.</p></div>
           </header>
-          <figure class="chapter-media reveal">
-            <video src="assets/video/lifting.mp4" poster="assets/video/lifting.jpg" muted loop playsinline preload="metadata" aria-label="The digital human lifting a box: full squat, semi squat and stoop"></video>
-            <figcaption>Full squat, semi squat and stoop. Muscles turn red as they work harder.</figcaption>
+          <figure class="chapter-media pair reveal">
+            <div class="vids">
+              <video src="assets/video/lifting.mp4" poster="assets/video/lifting.jpg" muted loop playsinline preload="metadata" aria-label="The digital human lifting a box: full squat, semi squat and stoop"></video>
+              <video src="assets/video/task-no-exo.mp4" poster="assets/video/task-no-exo.jpg" muted loop playsinline preload="metadata" aria-label="A full task: lift a box from the floor, carry it to a 1.5 m shelf, then bring it back"></video>
+            </div>
+            <figcaption>Left: full squat, semi squat and stoop. Right: a full task, from the floor to a 1.5 m shelf and back. Muscles turn red as they work harder.</figcaption>
           </figure>
         </article>
         <article class="chapter" id="step4">
@@ -160,9 +163,12 @@
             <div><h3>Train the exo controller</h3>
               <p class="sub">The digital human wears the exo. One controller learns by trial and error, across thousands of worker, load and technique combinations, before anyone wears the device.</p></div>
           </header>
-          <figure class="chapter-media reveal">
-            <video src="assets/video/exo-lifting.mp4" poster="assets/video/exo-lifting.jpg" muted loop playsinline preload="metadata" aria-label="The digital human lifting a box while wearing the FIT HV with the controller on"></video>
-            <figcaption>Wearing the FIT HV, with our controller assisting the hips.</figcaption>
+          <figure class="chapter-media pair reveal">
+            <div class="vids">
+              <video src="assets/video/exo-lifting.mp4" poster="assets/video/exo-lifting.jpg" muted loop playsinline preload="metadata" aria-label="The digital human lifting a box while wearing the FIT HV with the controller on"></video>
+              <video src="assets/video/task-with-exo.mp4" poster="assets/video/task-with-exo.jpg" muted loop playsinline preload="metadata" aria-label="The full shelf task wearing the FIT HV with its motors off"></video>
+            </div>
+            <figcaption>Left: lifting with our controller assisting the hips. Right: the full shelf task wearing the FIT HV with its motors off; the digital human first learns to move with the device on, then the controller is trained.</figcaption>
           </figure>
         </article>
         <article class="chapter" id="step5">
@@ -171,6 +177,9 @@
             <div><h3>Deploy on hardware</h3>
               <p class="sub">Our controller drives the FIT HV motors in real time. We test in the lab first, then in real workplaces.</p></div>
           </header>
+          <!-- TEAM SLOT (hardware videos): replace the photo with, for example,
+               <figure class="chapter-media reveal"><video src="assets/video/hardware.mp4" poster="assets/video/hardware.jpg" muted loop playsinline preload="metadata"></video><figcaption>What to watch for</figcaption></figure>
+               or two side by side: <figure class="chapter-media pair reveal"><div class="vids"><video ...></video><video ...></video></div><figcaption>...</figcaption></figure> -->
           <figure class="chapter-media photo reveal"><img src="assets/img/fithv.jpg" alt="FIT HV active hip exoskeleton worn while lifting a box"></figure>
         </article>
       </div>
@@ -200,19 +209,6 @@
       </div>
       <p class="cite fade">Exo results are from simulation.</p>
 
-      <!-- TEAM SLOT: add one .demo per video, e.g.
-           <figure class="demo"><video src="assets/video/rl-demo.mp4" controls muted playsinline></video><figcaption>What to watch for</figcaption></figure> -->
-      <h3 class="fade spaced-sm">Video demonstrations</h3>
-      <div class="demos wide-media">
-        <figure class="demo fade">
-          <video src="assets/video/task-no-exo.mp4" poster="assets/video/task-no-exo.jpg" muted loop playsinline controls preload="metadata"></video>
-          <figcaption>A full task in simulation: lift a box from the floor, carry it, put it on a 1.5 m shelf, then bring it back.</figcaption>
-        </figure>
-        <figure class="demo fade d1">
-          <video src="assets/video/task-with-exo.mp4" poster="assets/video/task-with-exo.jpg" muted loop playsinline controls preload="metadata"></video>
-          <figcaption>The same kind of task wearing the FIT HV with its motors off: the digital human first learns to move with the device on, before the controller is trained.</figcaption>
-        </figure>
-      </div>
     </section>
 
     <!-- Working together -->

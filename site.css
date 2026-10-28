@@ -100,6 +100,8 @@ ul.plain.strong li { color: var(--text); font-weight: 600; }
   box-shadow: 0 0 0 1px rgba(255, 255, 255, .07), 0 40px 120px -48px rgba(255, 95, 60, .35); }
 .chapter-media .vids { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
 .chapter-media.two video { aspect-ratio: 4 / 5; object-fit: cover; }
+.chapter-media.pair .vids { max-width: none; }
+.chapter-media.pair figcaption { max-width: 1360px; }
 .chapter-media.photo img { display: block; margin: 0 auto; max-height: 76vh; width: auto; border-radius: 22px; background: #e5eaee; }
 .chapter-media figcaption { max-width: 1096px; margin: 16px auto 0; padding: 0 2px; font-size: 15px; line-height: 1.5; color: var(--secondary); }
 .chapter-media.two figcaption { max-width: 1100px; }
@@ -168,7 +170,7 @@ ul.plain.strong li { color: var(--text); font-weight: 600; }
   .chapter-media, .wide-media { width: calc(100vw - 32px); }
   .chapter-media { margin-top: 28px; }
   .chapter-media .vids { gap: 10px; }
-  .demos.wide-media { grid-template-columns: minmax(0, 1fr); }
+  .chapter-media.pair .vids { grid-template-columns: minmax(0, 1fr); }
   .chapter-media video, .demo video { border-radius: 14px; }
 }
 @media (max-width: 480px) {
