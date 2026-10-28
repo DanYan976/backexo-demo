@@ -10,32 +10,13 @@ const fadeIn = new IntersectionObserver((entries) => {
     }
   }
 }, { rootMargin: "0px 0px -8% 0px" });
-document.querySelectorAll(".fade").forEach((el) => fadeIn.observe(el));
+document.querySelectorAll(".fade, .reveal").forEach((el) => fadeIn.observe(el));
 
-// Approach pipeline: the step crossing the middle of the screen picks the figure
-const steps = [...document.querySelectorAll(".step")];
-const frames = [...document.querySelectorAll(".frame")];
-const tabs = [...document.querySelectorAll(".pipe-nav li")];
-const count = document.querySelector(".pipe-count .grad");
-
-function setStep(i) {
-  steps.forEach((el, k) => el.classList.toggle("on", k === i));
-  frames.forEach((el, k) => el.classList.toggle("on", k === i));
-  tabs.forEach((el, k) => el.classList.toggle("on", k === i));
-  count.textContent = String(i + 1).padStart(2, "0");
-}
-
-const stepWatch = new IntersectionObserver((entries) => {
+// Videos play while on screen and pause when scrolled away (saves data and battery)
+const playWatch = new IntersectionObserver((entries) => {
   for (const e of entries) {
-    if (e.isIntersecting) setStep(steps.indexOf(e.target));
+    const v = e.target;
+    if (e.isIntersecting) { const p = v.play(); if (p) p.catch(() => {}); } else v.pause();
   }
-}, { rootMargin: "-45% 0px -45% 0px" });
-steps.forEach((el) => stepWatch.observe(el));
-setStep(0);
-
-// Clicking a step name scrolls to that step
-document.querySelectorAll(".pipe-nav button").forEach((b) => {
-  b.addEventListener("click", () => {
-    steps[Number(b.dataset.step)].scrollIntoView({ behavior: "smooth", block: "center" });
-  });
-});
+}, { threshold: 0.35 });
+document.querySelectorAll("video").forEach((v) => playWatch.observe(v));

@@ -12,9 +12,11 @@ AnyMotion Lab and BioDynamics Lab, New Jersey Institute of Technology.
 
 | Step | What it does |
 |---|---|
-| 1. Digital human models | [MyoFullBody](https://github.com/amathislab/musclemimic_models) from MuscleMimic, a full-body MuJoCo model driven by 416 muscles, fitted to each person's motion capture on the GPU; it gives the load on every spinal joint |
-| 2. Train in simulation | Each model wears the exo; one controller learns by trial and error across worker, load and technique combinations |
-| 3. Deploy on hardware | The trained controller drives the FIT HV motors in real time, tested in the lab first, then in real workplaces |
+| 1. Digital human model | [MyoFullBody](https://github.com/amathislab/musclemimic_models) from MuscleMimic, a full-body MuJoCo model driven by 416 muscles, fitted to each person's motion capture on the GPU; it gives the load on every spinal joint. A model of the FIT HV straps onto it |
+| 2. Learn from real motion | Lab recordings, even a plain video, become reference motions; the digital human learns to reproduce them in physics with its own muscles |
+| 3. Lift boxes in simulation | The digital human lifts boxes in physics with the techniques workers use (full squat, semi squat, stoop) and carries them to a shelf |
+| 4. Train the exo controller | The digital human wears the exo; one controller learns by trial and error across worker, load and technique combinations |
+| 5. Deploy on hardware | The trained controller drives the FIT HV motors in real time, tested in the lab first, then in real workplaces |
 
 ## Progress at a glance
 
@@ -42,6 +44,7 @@ The pipeline can run entirely on a partner's own systems, so no worker or task d
 Training exoskeleton controllers with reinforcement learning on musculoskeletal models, then testing them on a real exoskeleton.
 
 - Luo, Jiang, Zhang, Zhu, Yu, Dominguez Silva, Wang, Rouse, Zhou B., Yuk, Zhou X. and Su, "Experiment-free exoskeleton assistance via learning in simulation," *Nature* 630, 353–359, 2024. [doi:10.1038/s41586-024-07382-4](https://doi.org/10.1038/s41586-024-07382-4)
+- Yuan, Wolf, Androwis and Zhou, "Multi-Agent Reinforcement Learning of Co-Adaptive Hip Exoskeleton Control (MARL-Exo) for Metabolic Energy Reduction," 2026. [arXiv:2610.37441](https://arxiv.org/abs/2610.37441)
 - Yuan, Wolf, Androwis and Zhou, "UniExo: Unified Multi-Skill Policies for Musculoskeletal Locomotion and Co-Adaptive Exoskeleton Control," 2026. [arXiv:2609.19690](https://arxiv.org/abs/2609.19690)
 - Yuan, Wolf, Androwis and Zhou, "Staged Multi-Agent Training for Human-Exoskeleton Co-Adaptation: Simulation-Based Learning and Real-World Metabolic and Biomechanical Validation," 2026, extended version of the IROS 2026 paper. [arXiv:2608.00715](https://arxiv.org/abs/2608.00715)
 - Yuan, Androwis and Zhou, "SMAT: Staged Multi-Agent Training for Co-Adaptive Exoskeleton Control," IROS 2026. [arXiv:2603.07618](https://arxiv.org/abs/2603.07618)
@@ -59,7 +62,7 @@ Training exoskeleton controllers with reinforcement learning on musculoskeletal 
 ```
 index.html     the page and all its text
 site.css       the look: black stage, big type, orange-to-pink accent
-site.js        scroll effects (fade-in, the Approach steps)
+site.js        scroll effects (fade-in, videos play while on screen)
 assets/        images (img/) and videos (video/)
 ```
 
@@ -71,7 +74,7 @@ Plain HTML, CSS and JS, no build step. GitHub Pages serves the `main` branch, so
 |---|---|
 | Preview | Run `python -m http.server` in this folder and open http://localhost:8000, or double-click `index.html` |
 | Change text | Edit `index.html`; change only the text between tags and keep the `class="..."` attributes |
-| Add a figure to the Approach steps | Put the image in `assets/img/` and replace `<div class="frame placeholder">[Figure to add]</div>` with `<div class="frame photo"><img src="assets/img/your-figure.jpg" alt="..."></div>`. Keep one `.frame` per `.step`, in the same order |
+| Change an Approach step's video | Each step is an `<article class="chapter">`; replace the file in `assets/video/` (same name) and its poster `.jpg`. Videos: H.264, muted, 30 fps, a few MB each |
 | Add a video demo | Put the MP4 (H.264, under about 50 MB) in `assets/video/` and add it where the `TEAM SLOT` comment in the Progress section says |
 
 Style: put the accent only on the one number or word that matters (`class="grad"`), and avoid em dashes.

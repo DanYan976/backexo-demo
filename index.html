@@ -35,7 +35,7 @@
         <p class="lead rise d2">Back-support exoskeletons work less well in real workplaces, because their control gives every worker the same help. We train one adaptive controller in simulation, across many body sizes, loads and lifts, so it adjusts its assist to each worker. Then we run it on a commercial active exoskeleton.</p>
         <p class="rise d3"><a class="btn" href="#approach">See how it works</a></p>
       </div>
-      <div class="placeholder hero-fig rise d2">[Figure to add]</div>
+      <div class="hero-fig hero-media rise d2"><video src="assets/video/model-human.mp4" poster="assets/video/model-human.jpg" muted loop playsinline autoplay preload="auto" aria-label="The MyoFullBody digital human, with its 416 muscles, turning in place"></video></div>
     </section>
 
     <!-- Each section: big title, then one full-width description whose first sentence is the key point -->
@@ -113,41 +113,66 @@
       <p class="statement fade"><span class="grad">What is needed:</span> one controller that adapts to each worker's size, load and technique, needs no tuning sessions, gives smooth and stable torque, and cuts spine load.</p>
     </section>
 
-    <!-- Approach: text scrolls on the left, the figure on the right follows the active step -->
+    <!-- Approach: one full-width chapter per step (title and text, then its video) -->
     <section class="band wrap" id="approach">
       <h2 class="fade">Our approach</h2>
-      <p class="lead fade"><strong>One adaptive controller, built in three steps.</strong> We build digital human models, train the controller on them in simulation, then run it on a real exoskeleton.</p>
-      <div class="pipeline">
-        <div class="stage">
-          <ol class="pipe-nav" aria-label="Pipeline steps">
-            <li class="on"><button type="button" data-step="0">Human models</button></li>
-            <li><button type="button" data-step="1">Simulation</button></li>
-            <li><button type="button" data-step="2">Hardware deployment</button></li>
-          </ol>
-          <div class="frames">
-            <div class="frame on placeholder">[Figure to add]</div>
-            <div class="frame placeholder">[Figure to add]</div>
-            <div class="frame photo"><img src="assets/img/fithv.jpg" alt="FIT HV active hip exoskeleton worn while lifting a box"></div>
-          </div>
-          <p class="pipe-count"><span class="grad">01</span> / 03</p>
-        </div>
-        <div class="steps">
-          <article class="step">
-            <p class="step-n grad">01</p>
-            <h3>Digital human models</h3>
-            <p class="sub">We use <a href="https://github.com/amathislab/musclemimic_models">MyoFullBody</a> from MuscleMimic, a full-body MuJoCo model driven by 416 muscles. Fitted to each person's motion capture, it gives the load on every spinal joint.</p>
-          </article>
-          <article class="step">
-            <p class="step-n grad">02</p>
-            <h3>Train in simulation</h3>
-            <p class="sub">Each model wears the exo. One controller learns by trial and error, across thousands of worker, load and technique combinations, before anyone wears the device.</p>
-          </article>
-          <article class="step">
-            <p class="step-n grad">03</p>
-            <h3>Deploy on hardware</h3>
-            <p class="sub">Our controller drives the FIT HV motors in real time. We test in the lab first, then in real workplaces.</p>
-          </article>
-        </div>
+      <p class="lead fade"><strong>One adaptive controller, built in five steps.</strong> We build digital human models, teach them real motion and real lifts, train the exo controller on them in simulation, then run it on a real exoskeleton.</p>
+      <div class="chapters">
+        <article class="chapter" id="step1">
+          <header class="chapter-head fade">
+            <p class="chapter-n grad">01</p>
+            <div><h3>Digital human model</h3>
+              <p class="sub">We use <a href="https://github.com/amathislab/musclemimic_models">MyoFullBody</a> from MuscleMimic, a full-body MuJoCo model driven by 416 muscles. Fitted to each person's motion capture, it gives the load on every spinal joint. A model of the FIT HV straps onto it like the real device.</p></div>
+          </header>
+          <figure class="chapter-media two reveal">
+            <div class="vids">
+              <video src="assets/video/model-human.mp4" poster="assets/video/model-human.jpg" muted loop playsinline preload="metadata" aria-label="The MyoFullBody model turning in place"></video>
+              <video src="assets/video/model-exo.mp4" poster="assets/video/model-exo.jpg" muted loop playsinline preload="metadata" aria-label="The MyoFullBody model wearing the FIT HV, turning in place"></video>
+            </div>
+            <figcaption>MyoFullBody with its 416 muscles (left), and wearing the FIT HV (right).</figcaption>
+          </figure>
+        </article>
+        <article class="chapter" id="step2">
+          <header class="chapter-head fade">
+            <p class="chapter-n grad">02</p>
+            <div><h3>Learn from real motion</h3>
+              <p class="sub">Lab recordings, even a plain video, become reference motions. The digital human learns to reproduce them in physics with its own muscles, so we see how hard each muscle works.</p></div>
+          </header>
+          <figure class="chapter-media reveal">
+            <video src="assets/video/lab-trial.mp4" poster="assets/video/lab-trial.jpg" muted loop playsinline preload="metadata" aria-label="A lab trial on video, the motion computed from it, and the muscle-driven digital human reproducing it"></video>
+            <figcaption>A lab trial on video (left), the motion computed from it (middle), and the muscle-driven digital human reproducing it in physics (right). Brighter muscles work harder.</figcaption>
+          </figure>
+        </article>
+        <article class="chapter" id="step3">
+          <header class="chapter-head fade">
+            <p class="chapter-n grad">03</p>
+            <div><h3>Lift boxes in simulation</h3>
+              <p class="sub">The digital human lifts real boxes in physics, with the techniques workers use: full squat, semi squat and stoop.</p></div>
+          </header>
+          <figure class="chapter-media reveal">
+            <video src="assets/video/lifting.mp4" poster="assets/video/lifting.jpg" muted loop playsinline preload="metadata" aria-label="The digital human lifting a box: full squat, semi squat and stoop"></video>
+            <figcaption>Full squat, semi squat and stoop. Muscles turn red as they work harder.</figcaption>
+          </figure>
+        </article>
+        <article class="chapter" id="step4">
+          <header class="chapter-head fade">
+            <p class="chapter-n grad">04</p>
+            <div><h3>Train the exo controller</h3>
+              <p class="sub">The digital human wears the exo. One controller learns by trial and error, across thousands of worker, load and technique combinations, before anyone wears the device.</p></div>
+          </header>
+          <figure class="chapter-media reveal">
+            <video src="assets/video/exo-lifting.mp4" poster="assets/video/exo-lifting.jpg" muted loop playsinline preload="metadata" aria-label="The digital human lifting a box while wearing the FIT HV with the controller on"></video>
+            <figcaption>Wearing the FIT HV, with our controller assisting the hips.</figcaption>
+          </figure>
+        </article>
+        <article class="chapter" id="step5">
+          <header class="chapter-head fade">
+            <p class="chapter-n grad">05</p>
+            <div><h3>Deploy on hardware</h3>
+              <p class="sub">Our controller drives the FIT HV motors in real time. We test in the lab first, then in real workplaces.</p></div>
+          </header>
+          <figure class="chapter-media photo reveal"><img src="assets/img/fithv.jpg" alt="FIT HV active hip exoskeleton worn while lifting a box"></figure>
+        </article>
       </div>
     </section>
 
@@ -175,11 +200,22 @@
       </div>
       <p class="cite fade">Exo results are from simulation.</p>
 
-      <!-- TEAM SLOT: replace the placeholder with one .demo per video, e.g.
+      <!-- TEAM SLOT: add one .demo per video, e.g.
            <figure class="demo"><video src="assets/video/rl-demo.mp4" controls muted playsinline></video><figcaption>What to watch for</figcaption></figure> -->
       <h3 class="fade spaced-sm">Video demonstrations</h3>
-      <div class="demos">
-        <div class="placeholder demo-ph fade">[Video demonstrations to add]</div>
+      <div class="demos wide-media">
+        <figure class="demo wide fade">
+          <video src="assets/video/lab-trial.mp4" poster="assets/video/lab-trial.jpg" muted loop playsinline controls preload="metadata"></video>
+          <figcaption>A lifting trial in our lab (left), the motion our pipeline computes from that video (middle), and the muscle-driven digital human reproducing it in physics (right; brighter muscles work harder). Two clips from one trial.</figcaption>
+        </figure>
+        <figure class="demo fade">
+          <video src="assets/video/task-no-exo.mp4" poster="assets/video/task-no-exo.jpg" muted loop playsinline controls preload="metadata"></video>
+          <figcaption>A full task in simulation: lift a box from the floor, carry it, put it on a 1.5 m shelf, then bring it back.</figcaption>
+        </figure>
+        <figure class="demo fade d1">
+          <video src="assets/video/task-with-exo.mp4" poster="assets/video/task-with-exo.jpg" muted loop playsinline controls preload="metadata"></video>
+          <figcaption>The same kind of task wearing the FIT HV with its motors off: the digital human first learns to move with the device on, before the controller is trained.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -237,6 +273,14 @@
             <h3><a href="https://www.nature.com/articles/s41586-024-07382-4">Experiment-free exoskeleton assistance via learning in simulation</a></h3>
             <p class="pub-authors">S. Luo, M. Jiang, S. Zhang, J. Zhu, S. Yu, I. Dominguez Silva, T. Wang, E. Rouse, B. Zhou, H. Yuk, X. Zhou, H. Su</p>
             <p class="sub">A hip-exo controller learned entirely in simulation, with no human experiments in training. On a real hip exo, it cut energy use by 24.3% when walking, 13.1% when running and 15.4% when climbing stairs.</p>
+          </div>
+        </li>
+        <li class="pub fade">
+          <p class="pub-venue">arXiv<span>Oct 2026</span></p>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2610.37441">Multi-Agent Reinforcement Learning of Co-Adaptive Hip Exoskeleton Control (MARL-Exo) for Metabolic Energy Reduction</a></h3>
+            <p class="pub-authors">Y. Yuan, J. Wolf, G. Androwis, X. Zhou</p>
+            <p class="sub">A full-body muscle model with varied body sizes, gaits and speeds trains together with a hip-exo controller that is rewarded for lowering muscle energy use. The controller sees only the hip angles and its own past commands. Moved to a real hip exo with no retraining, it cut the energy cost of walking by 18.3% compared with the unpowered device, in all eight adults tested.</p>
           </div>
         </li>
         <li class="pub fade">
