@@ -22,10 +22,9 @@ AnyMotion Lab and BioDynamics Lab, New Jersey Institute of Technology.
 
 | Check | Result |
 |---|---|
-| Lifting trials processed | 90 trials from 10 people |
-| Marker fit, same input as OpenSim | 19.9 mm; OpenSim 26.2 mm |
+| Lifts processed | 360 lifts from 10 people (4 techniques x 9 directions) |
 | L5/S1 load vs force plates | r = 0.99 |
-| Lower-back effort with exo assist (20 N·m per hip) | −25%, in simulation |
+| Lower-back effort with exo assist | −25%, in simulation |
 | Hardware | Live control of the FIT HV motors from our own software |
 
 Exo results are from simulation.
