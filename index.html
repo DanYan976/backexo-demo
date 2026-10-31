@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="site.css?v=7">
+  <link rel="stylesheet" href="site.css?v=8">
 </head>
 <body>
   <header class="nav">
@@ -116,7 +116,7 @@
     <!-- Approach: one full-width chapter per step (title and text, then its video) -->
     <section class="band wrap" id="approach">
       <h2 class="fade">Our approach</h2>
-      <p class="lead fade"><strong>One adaptive controller, built in five steps.</strong> We build digital human models, teach them real motion and real lifts, train the exo controller on them in simulation, then run it on a real exoskeleton.</p>
+      <p class="lead fade"><strong>One adaptive controller, built in five steps.</strong> We build digital humans that mimic real workers, teach them real motion and real lifts, train the exo controller on them in simulation, then run it on a real exoskeleton.</p>
       <div class="chapters">
         <article class="chapter" id="step1">
           <header class="chapter-head fade">
@@ -161,32 +161,32 @@
           <header class="chapter-head fade">
             <p class="chapter-n grad">04</p>
             <div><h3>Train the exo controller</h3>
-              <p class="sub">The digital human wears the exo. One controller learns by trial and error, across thousands of worker, load and technique combinations, before anyone wears the device.</p></div>
+              <p class="sub">The digital human wears the exo and adapts to moving with it. One controller learns by reinforcement learning (trial and error), across thousands of worker, load and technique combinations, before anyone wears the device.</p></div>
           </header>
           <figure class="chapter-media reveal">
-            <video src="assets/video/crowd.mp4" poster="assets/video/crowd.jpg" muted loop playsinline preload="metadata" aria-label="Thousands of digital humans wearing the FIT HV in simulation, carrying boxes to shelves and lifting boxes with three techniques"></video>
-            <figcaption>Thousands of digital humans wearing the FIT HV train at once: half carry boxes to a shelf, half lift boxes with a full squat, a semi squat or a stoop.</figcaption>
+            <video src="assets/video/crowd.mp4" poster="assets/video/crowd.jpg" muted loop playsinline preload="metadata" aria-label="Thousands of digital humans wearing the back exoskeleton in simulation, carrying boxes to shelves and lifting boxes with three techniques"></video>
+            <figcaption>Thousands of digital humans wearing the back exoskeleton train at once: half carry boxes to a shelf, half lift boxes with a full squat, a semi squat or a stoop.</figcaption>
           </figure>
           <figure class="chapter-media pair reveal">
             <div class="vids">
-              <video src="assets/video/exo-lifting.mp4?v=2" poster="assets/video/exo-lifting.jpg?v=2" muted loop playsinline preload="metadata" aria-label="The digital human lifting a box while wearing the FIT HV with the controller on"></video>
-              <video src="assets/video/task-with-exo.mp4?v=2" poster="assets/video/task-with-exo.jpg?v=2" muted loop playsinline preload="metadata" aria-label="The full shelf task wearing the FIT HV with its motors off"></video>
+              <video src="assets/video/exo-lifting.mp4?v=2" poster="assets/video/exo-lifting.jpg?v=2" muted loop playsinline preload="metadata" aria-label="The digital human doing an asymmetric lift while wearing the exo, with the trained controller assisting"></video>
+              <video src="assets/video/task-with-exo.mp4?v=2" poster="assets/video/task-with-exo.jpg?v=2" muted loop playsinline preload="metadata" aria-label="The digital human wearing the exo, lifting a box over the shoulder to a shelf"></video>
             </div>
-            <figcaption>Left: lifting with our controller assisting the hips. Right: the full shelf task wearing the FIT HV with its motors off; the digital human first learns to move with the device on, then the controller is trained.</figcaption>
+            <figcaption>Left: asymmetric lifting with trained controller assistance. Right: over-the-shoulder lifting to a shelf.</figcaption>
           </figure>
         </article>
         <article class="chapter" id="step5">
           <header class="chapter-head fade">
             <p class="chapter-n grad">05</p>
             <div><h3>Deploy on hardware</h3>
-              <p class="sub">Our controller drives the FIT HV motors in real time. We test in the lab first, then in real workplaces.</p></div>
+              <p class="sub">Our controller drives the FIT HV motors in real time. Next: cohort tests on additional lifting tasks, then real workplaces.</p></div>
           </header>
           <!-- TEAM SLOT (hardware videos): replace the photo with, for example,
                <figure class="chapter-media reveal"><video src="assets/video/hardware.mp4" poster="assets/video/hardware.jpg" muted loop playsinline preload="metadata"></video><figcaption>What to watch for</figcaption></figure>
                or two side by side: <figure class="chapter-media pair reveal"><div class="vids"><video ...></video><video ...></video></div><figcaption>...</figcaption></figure> -->
           <figure class="chapter-media hw reveal">
             <video src="assets/video/hardware.mp4" poster="assets/video/hardware.jpg" muted loop playsinline preload="metadata" aria-label="A person wearing the FIT HV lifts a box repeatedly while the trained controller runs live; the panels show trunk lean, hip angles, hip angular velocity and the hip torque sent"></video>
-            <figcaption>Live on the FIT HV: the trained controller runs on the exo's own sensors (back IMU and hip encoders) at 100 Hz. Left: repeated box lifts. Right, synced: trunk lean, left and right hip angle and angular velocity, and the extension torque sent to each hip.</figcaption>
+            <figcaption>Live on the FIT HV: the trained controller runs on the exo's own sensors (back IMU and hip encoders) at 100 Hz. Left: repeated box lifts. Right, synced: trunk lean, left and right hip angle and angular velocity, and the exo assistance (extension) torques.</figcaption>
           </figure>
         </article>
       </div>
@@ -203,7 +203,7 @@
         </div>
         <div class="fade d1">
           <p class="stat"><span class="muted small">r = </span><span class="grad">0.99</span></p>
-          <div class="rule"><p class="cap">match between our L5/S1 load and force plates.</p><p class="sub">The same joint the NIOSH limit is set at.</p></div>
+          <div class="rule"><p class="cap">match between our L5/S1 load and experimental measurements.</p><p class="sub">The same joint the NIOSH limit is set at.</p></div>
         </div>
         <div class="fade d2">
           <p class="stat grad">&minus;25%</p>
@@ -230,7 +230,8 @@
         <div class="rule fade d2"><h3 class="grad">Together</h3>
           <ul class="plain strong"><li>Controllers fitted to real workplace tasks</li><li>L5/S1 load checked against the NIOSH limit</li><li>A step-by-step path from lab to workplace</li></ul></div>
       </div>
-      <p class="statement fade">One possible first step: <span class="sec">we share the pipeline, you run it on a few real tasks in-house, and we test the exo on the same tasks, recreated in our lab, before any workplace trial.</span></p>
+      <p class="statement fade">One possible first step: <span class="sec">we share the pipeline, you run it on a few real tasks in-house, and we test the exo on the same tasks, recreated in our lab, before any real-world deployment.</span></p>
+      <p class="closing fade"><span class="grad">We look forward to potential collaboration.</span></p>
     </section>
 
     <!-- Labs -->

@@ -15,7 +15,7 @@ AnyMotion Lab and BioDynamics Lab, New Jersey Institute of Technology.
 | 1. Digital human model | A full-body musculoskeletal model driven by 416 muscles, fitted to each person's motion capture on the GPU; it gives the load on every spinal joint. A model of the FIT HV couples onto it |
 | 2. Learn from real motion | Lab recordings, even a plain video, become reference motions; the digital human learns to reproduce them in physics with its own muscles |
 | 3. Lift boxes in simulation | The digital human lifts boxes in physics with the techniques workers use (full squat, semi squat, stoop) and carries them to a shelf |
-| 4. Train the exo controller | The digital human wears the exo; one controller learns by trial and error across worker, load and technique combinations |
+| 4. Train the exo controller | The digital human wears the exo and adapts to it; one controller learns by reinforcement learning across worker, load and technique combinations |
 | 5. Deploy on hardware | The trained controller drives the FIT HV motors in real time, tested in the lab first, then in real workplaces |
 
 ## Progress at a glance
@@ -23,7 +23,7 @@ AnyMotion Lab and BioDynamics Lab, New Jersey Institute of Technology.
 | Check | Result |
 |---|---|
 | Lifts processed | 360 lifts from 10 people (4 techniques x 9 directions) |
-| L5/S1 load vs force plates | r = 0.99 |
+| L5/S1 load vs experimental measurements | r = 0.99 |
 | Lower-back effort with exo assist | −25%, in simulation |
 | Hardware | Live control of the FIT HV motors from our own software |
 

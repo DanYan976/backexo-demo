@@ -54,6 +54,7 @@ h3 { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 8px
 .cite a, .sub a { color: var(--secondary); text-underline-offset: 2px; }
 .sub a:hover { color: var(--text); }
 .statement { font-size: 23px; font-weight: 600; line-height: 1.4; margin: 56px 0 0; padding-top: 22px; border-top: 1px solid var(--line); }
+.closing { font-size: clamp(34px, 4.4vw, 56px); font-weight: 700; line-height: 1.08; letter-spacing: -0.025em; margin: 88px 0 0; text-wrap: balance; }
 .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 16px; padding: 11px 22px; border-radius: 999px; background: var(--text); color: #000; }
 .btn:hover { background: #fff; }
 
@@ -167,6 +168,7 @@ ul.plain.strong li { color: var(--text); font-weight: 600; }
   .pub { grid-template-columns: 1fr; gap: 8px; }
   .grid.c4 { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
   .statement { font-size: 20px; }
+  .closing { margin-top: 64px; }
   .chapter { padding-top: 80px; }
   .chapter-head { grid-template-columns: 1fr; gap: 8px; }
   .chapter-head .sub { font-size: 18px; }
